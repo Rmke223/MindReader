@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </head>
 
 <body>
-    <p> </p>
-    <div class="container overflow-auto border rounded align-middle" style="height: 300px">
-    <h1 id="header" class="text-secondary text-center">Headerrrrr</h1>
-</div>
-    <div class="container-fluid text-center">
-        <button style="height: 50px;" id="btn1" onclick="nextState()" class="btn btn-primary btn-circle btn-xl"><i class="fas fa-forward"></i>next</button>
-    </div>
-    <p id="smTxt" class="text-center">small text</p>
     <div class="text-center">
-        <button class="btn btn-primary btn-circle btn-xl" id="btn2" onclick="resetState()">reset</button>
+    <img id ="pic" src="./img/giphy.gif">
+    
+</div>
+    <br>
+    <div class="container overflow-auto border rounded col-3" style="height: 300px">
+        <h1 id="header" class="text-secondary text-center my-auto">Headerrrrr</h1>
+    </div>
+    <br>
+    <div class="container text-center col-3">
+        <button style="height: 50px;" id="btn1" onclick="nextState()" class="btn btn-primary btn-block">Next</button>
+    </div>
+    <br>
+    <p id="smTxt" class="text-center">small text</p>
+    <br>
+    <div class="text-center">
+        <button class="btn btn-warning btn-circle btn-xl" id="btn2" onclick="resetState()">Reset</button>
     </div>
 
     <script src="main.js"></script>

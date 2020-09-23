@@ -12,20 +12,20 @@ var chars = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "?"]
 
 function randomsym() {
     var rightAns = chars[Math.floor(Math.random() * 10)]
-    var str = "<ul>";
+    var str = "";
     for (i = 0; i <= 99; i++) {
         if (i % 9) {
             var ree = chars[Math.floor(Math.random() * 10)]
-            
-            str = str + "<li>" + i + " - " + ree + "</li>"
-            
+
+            str = str + i + " - " + ree + "<br>"
+
         }
         else {
-            str = str + "<li>" + +i + " - " + rightAns + "</li>"
+            str = str + i + " - " + rightAns + "<br>"
             selectedSym = rightAns
         }
     }
-    str = str + "</ul>"
+    str = str
     return str;
 }
 function nextState() {
@@ -37,10 +37,7 @@ function resetState() {
     state = 1
     updateView()
 }
-window.onhashchange = function() {
-    state --
-    updateView()
-   }
+
 
 
 
@@ -50,12 +47,18 @@ function updateView() {
         document.getElementById("smTxt").innerHTML = ""
         document.getElementById("btn2").style.visibility = "hidden"
         document.getElementById("btn1").style.visibility = "initial"
+        document.getElementById("pic").style.visibility = "hidden"
+
+
     }
     else if (state == 2) {
         document.getElementById("header").innerHTML = "Pick a number from 01-99"
         document.getElementById("smTxt").innerHTML = "when you have your answer click next"
         document.getElementById("btn2").style.visibility = "initial"
         document.getElementById("btn1").style.visibility = "initial"
+        document.getElementById("pic").style.visibility = "hidden"
+
+
 
     }
     else if (state == 3) {
@@ -63,28 +66,38 @@ function updateView() {
         document.getElementById("smTxt").innerHTML = "Ex: 14 is 1 + 4 = 5 <br>click next to proceed"
         document.getElementById("btn2").style.visibility = "initial"
         document.getElementById("btn1").style.visibility = "initial"
+        document.getElementById("pic").style.visibility = "hidden"
     }
     else if (state == 4) {
         document.getElementById("header").innerHTML = "Subtract your new number from the original number"
         document.getElementById("smTxt").innerHTML = "Ex: 14 - 5 = 9<br>click next to proceed "
         document.getElementById("btn2").style.visibility = "initial"
         document.getElementById("btn1").style.visibility = "initial"
+        document.getElementById("pic").style.visibility = "hidden"
     }
     else if (state == 5) {
-        // call the function and return the string
-        // var mysymbols = randomizerdude();
         var str = randomsym()
         document.getElementById("header").innerHTML = str;
         document.getElementById("smTxt").innerHTML = "Find your new number.<br>Note the symbol beside the number"
         document.getElementById("btn2").style.visibility = "initial"
         document.getElementById("btn1").style.visibility = "initial"
+        document.getElementById("pic").style.visibility = "hidden"
     }
     else if (state == 6) {
 
-        document.getElementById("header").innerHTML = selectedSym
-        document.getElementById("smTxt").innerHTML = "your symbol is: <br>" +selectedSym
-        document.getElementById("btn2").style.visibility = "initial"
-        document.getElementById("btn1").style.visibility = "hidden"
+        document.getElementById("header").innerHTML = "HMMMMMMMMMM"
+        document.getElementById("smTxt").innerHTML = ""
+        document.getElementById("btn2").style.visibility = "hidden"
+        document.getElementById("btn1").style.visibility = "initial"
+        document.getElementById("pic").style.visibility = "initial"
     }
-}
-updateView()
+        else if (state == 7) {
+
+            document.getElementById("header").innerHTML = selectedSym 
+            document.getElementById("smTxt").innerHTML = "your symbol is: <br>" + selectedSym
+            document.getElementById("btn2").style.visibility = "initial"
+            document.getElementById("btn1").style.visibility = "hidden"
+            document.getElementById("pic").src="./img/giphy (1).gif";
+        }
+    }
+    updateView()
